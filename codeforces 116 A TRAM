@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int a[1001],b[1001],sum1=0,sum2=0,capacity=0;
+    vector<int>maximum;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+        cin>>b[i];
+        sum1=sum1+a[i];
+        sum2=sum2+b[i];
+       // cout<<sum1<<"sum1"<<endl;
+       // cout<<sum2<<"sum2"<<endl;
+        capacity=capacity+sum2-sum1;
+        sum1=0;
+        sum2=0;
+      //  cout<<capacity<<"capacity"<<endl;
+        maximum.push_back(capacity);
+    }
+    cout<<*max_element(maximum.begin(),maximum.end())<<endl;
+}
